@@ -23,7 +23,7 @@ def get_location():
 
 def get_current_data():
 
-    time.sleep(5)
+    time.sleep(10)
 
     xid_proc = subprocess.Popen(
         "xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2",

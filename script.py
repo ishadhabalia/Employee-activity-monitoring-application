@@ -12,7 +12,8 @@ def get_location():
     url = "http://ipinfo.io/json"
     response = urllib.request.urlopen(url)
     data = json.load(response)
-    remove = ["country", "hostname", "postal", "timezone", "readme", "org", "region"]
+    print(data)
+    remove = ["country", "postal", "timezone", "readme", "org", "region"]
     for i in remove:
         data.pop(i)
     return data
@@ -53,5 +54,6 @@ def append_row(data, filename="peek"):
 
 
 if __name__ == "__main__":
+    print("in script.py")
     data = get_current_data()
     append_row(data)

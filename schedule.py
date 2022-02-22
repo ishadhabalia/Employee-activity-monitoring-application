@@ -9,7 +9,7 @@ def setup_schtask():
     bat_path = os.path.join(bat_path, "run_schtask.bat")
     with open(bat_path, "w") as f:
         bat_command = """
-            :: this batch file is used to run the getdata.py
+            :: this batch file is used to run the script.py
             py {}
         """.format(
             
@@ -18,9 +18,11 @@ def setup_schtask():
         print(bat_command)
         f.write(bat_command)
         f.close()
-    command = "schtasks /create /tn runpy /sc minute /mo 1 /tr '{}'".format(script_path)
-    print(command)
-    subprocess.call(command)
+    # command = "schtasks /create /tn runpy /sc minute /mo 1 /tr '{}'".format(script_path)
+    # print(command)
+    os.system("SCHTASKS /Create /XML runpy.xml /TN runpy /F")   
+    # print(command)
+    # subprocess.call(command)
     subprocess.call("schtasks /run /tn runpy")
     return True
 

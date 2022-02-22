@@ -1,1 +1,1 @@
-py script.py
+py schedule.py
