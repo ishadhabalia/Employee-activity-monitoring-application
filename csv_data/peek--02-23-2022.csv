@@ -1,0 +1,14 @@
+Date,Process-Name,Name,IP,City,Location
+
+2022-02-23 09:45:33.363830,['C:\\WINDOWS\\SYSTEM32\\cmd.exe'],183.87.99.209,Artist Village,"19.0323,73.0428"
+
+2022-02-23 10:03:07.025942,['C:\\WINDOWS\\SYSTEM32\\cmd.exe'],183.87.99.209,Artist Village,"19.0323,73.0428"
+
+2022-02-23 10:04:01.802071,['C:\\WINDOWS\\SYSTEM32\\cmd.exe'],183.87.99.209,Artist Village,"19.0323,73.0428"
+
+2022-02-23 10:19:17.924273,['C:\\WINDOWS\\SYSTEM32\\cmd.exe'],183.87.99.209,Artist Village,"19.0323,73.0428"
+
+2022-02-23 10:20:01.831993,['C:\\WINDOWS\\SYSTEM32\\cmd.exe'],183.87.99.209,Artist Village,"19.0323,73.0428"
+
+2022-02-23 10:21:01.931605,"['New-ScheduledTaskSettingsSet (ScheduledTasks) | Microsoft Docs', 'Google Chrome']",183.87.99.209,Artist Village,"19.0323,73.0428"
+

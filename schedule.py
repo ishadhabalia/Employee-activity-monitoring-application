@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 
 
 def setup_schtask():
@@ -10,7 +11,7 @@ def setup_schtask():
     with open(bat_path, "w") as f:
         bat_command = """
             :: this batch file is used to run the script.py
-            py {}
+            py "{}" 
         """.format(
             
                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "script.py"),
@@ -18,14 +19,22 @@ def setup_schtask():
         print(bat_command)
         f.write(bat_command)
         f.close()
-    # command = "schtasks /create /tn runpy /sc minute /mo 1 /tr '{}'".format(script_path)
-    # print(command)
-    os.system("SCHTASKS /Create /XML runpy.xml /TN runpy /F")   
-    # print(command)
-    # subprocess.call(command)
-    subprocess.call("schtasks /run /tn runpy")
-    return True
+    command = "schtasks /create /tn runpy /sc minute /mo 1 /tr '{}'".format(script_path)
+    subprocess.call(command)
+    # os.system("SCHTASKS /Create /XML runpy.xml /TN runpy /F")  
+    # os.system(command)
+    # os.system("schtasks /run /tn runpy")
 
+    # command="$taskAction = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument 'py '{}''".format(script_path)
+    # subprocess.call(command)
+    # subprocess.call("Set-ScheduledTask 'runpy' -Action $taskAction")
+
+    # subprocess.call("create_task.bat")
+    command="powershell.exe -ExecutionPolicy RemoteSigned -file modify_schtask.ps1"
+    # os.system(command)
+    p = subprocess.Popen(command, stdout=sys.stdout)
+    p.communicate()
+    return True
 
 if __name__ == "__main__":
     setup_schtask()
