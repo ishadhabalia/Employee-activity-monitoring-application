@@ -1,0 +1,9 @@
+Date,Process,IP,City,Location
+2022-02-21 16:33:37.579350,"['C:\\Windows\\System32\\cmd.exe ', ' py  script.py']",
+2022-02-21 16:34:59.567075,"['C:\\Windows\\System32\\cmd.exe ', ' py  script.py']",182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 16:43:53.423789,C:\Windows\System32\cmd.exe , py  script.py,182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 16:45:25.003186,C:\Windows\System32\cmd.exe , py  script.py,182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 16:55:18.446535,C:\Windows\System32\cmd.exe , run,182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 16:56:03.362165,C:\Windows\System32\cmd.exe , run,182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 17:21:24.534902,"['C:\\Windows\\System32\\cmd.exe ', ' py  D:\\TY_MP\\data', 'tracking\\script.py']",182.76.21.121,Mumbai,"19.0728,72.8826"
+2022-02-21 17:35:05.495786,"['C:\\Windows\\System32\\cmd.exe', 'D:\\TY_MP\\data-tracking\\run_schtask.bat']",182.76.21.121,Mumbai,"19.0728,72.8826"
