@@ -4,7 +4,7 @@ Include/
 Lib/
 Scripts/
 *.cfg
-*.csv
+**/csv_data/
 enable-venv.bat
 run_schtask.bat
 run_script.vbs
