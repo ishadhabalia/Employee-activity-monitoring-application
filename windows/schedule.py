@@ -6,20 +6,26 @@ import sys
 def setup_schtask():
     script_path = os.path.dirname(os.path.abspath(__file__))
     bat_path = script_path
+    vbs_path = script_path + "\\run_script.vbs"
     script_path += "\\run_schtask.bat"
     bat_path = os.path.join(bat_path, "run_schtask.bat")
-    with open(bat_path, "w") as f:
-        bat_command = """
-            :: this batch file is used to run the script.py
-            py "{}" 
-        """.format(
+    with open(vbs_path, "w") as f:
+        vbs_command = '''
+            'this vbs file is used to run the script.py
+            CreateObject("Wscript.Shell").Run "pythonw.exe ""{}"" ",0,True 
+        '''.format(
             
                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "script.py"),
         )
-        print(bat_command)
-        f.write(bat_command)
+        print(vbs_command)
+        f.write(vbs_command)
         f.close()
-    command = "schtasks /create /tn runpy /sc minute /mo 1 /tr '{}'".format(script_path)
+    command = '''schtasks /create /tn runpy /sc minute /mo 1 /tr "wscript.exe \\"{}\\"" '''.format(vbs_path)
+
+    # command = '''schtasks /create /tn runpy /sc minute /mo 1 /tr "'{}', Arguments" '''.format(script_path)
+    # command = '''schtasks /create /tn runpy /sc minute /mo 1 /tr "wscript.exe \"D:\\mahi\\Projects\\Employee Tracking\\Employee-activity-monitoring-application\\run_script.vbs\"" '''
+    # command = '''schtasks /create /tn runpy /sc minute /mo 1 /tr "powershell.exe -Hidden -file '{}', Arguments" '''.format(script_path)
+    
     subprocess.call(command)
     # os.system("SCHTASKS /Create /XML runpy.xml /TN runpy /F")  
     # os.system(command)
