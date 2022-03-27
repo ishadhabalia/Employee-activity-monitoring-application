@@ -28,7 +28,7 @@ class UserBuffer(Model):
         verbose_name = 'User Buffer'
     
 class UserBufferLocation(Model):
-    user_id = ForeignKey(UserBuffer, on_delete=CASCADE, related_name='user_id')
+    user_id = ForeignKey(UserBuffer, on_delete=CASCADE, related_name='user_id_loc')
     created_on = DateTimeField(blank=False, null=False, default=datetime.now())
     updated_on = DateTimeField(blank=False, null=False,default=datetime.now())
     ip = CharField(max_length=15,blank=False,null=False)
@@ -53,7 +53,7 @@ class UserBufferLocation(Model):
         verbose_name = 'User Buffer Location'
     
 class UserBufferData(Model):
-    user_id = ForeignKey(UserBuffer, on_delete=CASCADE, related_name='user_id')
+    user_id = ForeignKey(UserBuffer, on_delete=CASCADE, related_name='user_id_data')
     created_on = DateTimeField(blank=False, null=False, default=datetime.now())
     updated_on = DateTimeField(blank=False, null=False,default=datetime.now())
     productive = PositiveIntegerField() # productive =1  | non prod = 0  | others = 2
