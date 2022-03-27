@@ -52,8 +52,13 @@ def append_row(data, filename="peek"):
         csv_writer = csv.writer(file, delimiter=",")
         csv_writer.writerow(row)
 
+def send_data(data):
+    API_ENDPOINT = "http://localhost:5000/update-activity"
+    r = requests.post(url = API_ENDPOINT, json=json.dumps(data))
+    print(r)
 
 if __name__ == "__main__":
     print("in script.py")
     data = get_current_data()
     append_row(data)
+    send_data(data)
