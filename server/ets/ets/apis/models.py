@@ -56,7 +56,7 @@ class UserBufferData(Model):
     user_id = ForeignKey(UserBuffer, on_delete=CASCADE, related_name='user_id')
     created_on = DateTimeField(blank=False, null=False, default=datetime.now())
     updated_on = DateTimeField(blank=False, null=False,default=datetime.now())
-
+    productive = PositiveIntegerField() # productive =1  | non prod = 0  | others = 2
     date = DateTimeField(blank=False, null=False)
     process_name = TextField(blank=False, null=False)
     

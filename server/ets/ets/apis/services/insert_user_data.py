@@ -45,6 +45,7 @@ def insert_user_activity(user_id,data):
     try:
         user_activity_data = UserBufferData(user_id=user_id,process_name=data.process_name,date=data.date)
         user_activity_data.save()
+        # TODO: import the methods for classificaiton and append the values in the model @isha & @mahi
         if not update_user_location(user_id,data):
             raise Exception("Wrong location data")
         return True
