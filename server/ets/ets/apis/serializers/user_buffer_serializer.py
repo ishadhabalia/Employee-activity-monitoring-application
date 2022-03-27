@@ -9,7 +9,7 @@ class UserBufferSerializer(serializers.ModelSerializer):
 class UserBufferDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserBufferData
-        fields = ('id','user_id','date','process_name',)
+        fields = ('id','user_id', 'created_on', 'updated_on', 'productive', 'date','process_name',)
 
 class UserBufferLocationSerializer(serializers.ModelSerializer):
     class Meta:

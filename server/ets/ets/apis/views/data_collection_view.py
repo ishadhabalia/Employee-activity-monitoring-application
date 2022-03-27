@@ -14,12 +14,14 @@ class CollectData(APIView):
     
     def post(self, request):
         try:
+            print(request.data)
             # user_id = request.auth_user_id
             user_id=1
             logger.info("request is {}".format(request))
             is_data_added = insert_user_activity(user_id,request.data)
             if is_data_added:
                 return Response({"status":"activity updated"})
+            return Response({"status":"activity not updated"})
         except:
             raise Exception('user activity not saved')
             

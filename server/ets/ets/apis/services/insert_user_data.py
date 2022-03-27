@@ -1,4 +1,4 @@
-from ets.apis.models import UserBufferData, UserBufferLocation
+from ets.apis.models import UserBuffer, UserBufferData, UserBufferLocation
 import ets.apis.constants as Constants
 
 import pickle
@@ -70,6 +70,8 @@ def update_user_location(user_id,data):
         
 
 import json
+from rest_framework.decorators import api_view
+
 def insert_user_activity(user_id,data):
     # if data.keys() != Constants.ACTIVITY_DATA.keys():
     #     raise Exception("Wrong data format")
@@ -77,22 +79,24 @@ def insert_user_activity(user_id,data):
         print(data)
         print(type(data))
         data = json.loads(data)
-        print(type(data["process"]))
         
-        print(data['date'])
         from datetime import datetime
         data["date"] = datetime.strptime(data["date"], "%Y-%m-%d %H:%M:%S")
-        print(type(data["date"]))
 
         # prodVal = predictProductivity(str(['emp-tracking','vscode']))
         prodVal = predictProductivity(str(data["process"]))
         print(prodVal)
-        # user_activity_data = UserBufferData(user_id=user_id,process_name=data.process_name,date=data.date, productive=prodVal)
-        user_activity_data = UserBufferData('1',user_id=user_id,process_name=data["process"],date=data["date"], productive=prodVal, created_on=data["date"], updated_on=data["date"])
-        user_activity_data.save()
-        # if not update_user_location(user_id,data):
-        #     raise Exception("Wrong location data")
-        return True
+        # user_activity_data = UserBufferData(id='1',user_id=obj,process_name=data["process"],date=data["date"], productive=prodVal, created_on=data["date"], updated_on=data["date"])
+        obj = UserBuffer.objects.first()
+        post = UserBufferData()
+        # post.id = 2
+        post.user_id = obj
+        post.created_on = data["date"]
+        post.updated_on = data["date"]
+        post.productive = prodVal
+        post.date = data["date"]
+        post.process_name = data["process"]
+        post.save()
     except:
         print("exception")
         return False
