@@ -16,7 +16,7 @@ class CollectData(APIView):
         try:
             user_id = request.auth_user_id
             logger.info("request is {}".format(request))
-            is_data_added = insert_user_activity(user_id)
+            is_data_added = insert_user_activity(user_id,request.data)
             if is_data_added:
                 return Response({"status":"activity updated"})
         except:
