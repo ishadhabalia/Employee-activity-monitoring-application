@@ -14,7 +14,8 @@ class CollectData(APIView):
     
     def post(self, request):
         try:
-            user_id = request.auth_user_id
+            # user_id = request.auth_user_id
+            user_id=1
             logger.info("request is {}".format(request))
             is_data_added = insert_user_activity(user_id,request.data)
             if is_data_added:

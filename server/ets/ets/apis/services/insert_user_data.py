@@ -22,7 +22,7 @@ import re
 #imports for tokenization
 import pandas as pd
 import nltk
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords as stopWords
 # from nltk
 from nltk.tokenize import word_tokenize 
 import ast
@@ -68,20 +68,33 @@ def update_user_location(user_id,data):
     except:
         return False
         
-    
 
+import json
 def insert_user_activity(user_id,data):
-    if data.keys() != Constants.ACTIVITY_DATA.keys():
-        raise Exception("Wrong data format")
+    # if data.keys() != Constants.ACTIVITY_DATA.keys():
+    #     raise Exception("Wrong data format")
     try:
-        prodVal = predictProductivity(str(data.process_name))
-        user_activity_data = UserBufferData(user_id=user_id,process_name=data.process_name,date=data.date, productive=prodVal)
+        print(data)
+        print(type(data))
+        data = json.loads(data)
+        print(type(data["process"]))
+        
+        print(data['date'])
+        from datetime import datetime
+        data["date"] = datetime.strptime(data["date"], "%Y-%m-%d %H:%M:%S")
+        print(type(data["date"]))
+
+        # prodVal = predictProductivity(str(['emp-tracking','vscode']))
+        prodVal = predictProductivity(str(data["process"]))
+        print(prodVal)
+        # user_activity_data = UserBufferData(user_id=user_id,process_name=data.process_name,date=data.date, productive=prodVal)
+        user_activity_data = UserBufferData('1',user_id=user_id,process_name=data["process"],date=data["date"], productive=prodVal, created_on=data["date"], updated_on=data["date"])
         user_activity_data.save()
-        # predictProductivity(str(['emp-tracking','vscode']))
-        if not update_user_location(user_id,data):
-            raise Exception("Wrong location data")
+        # if not update_user_location(user_id,data):
+        #     raise Exception("Wrong location data")
         return True
     except:
+        print("exception")
         return False
 
 
@@ -94,7 +107,7 @@ def predictProductivity(processName):
     
     #
     scrapTool = ScrapTool()
-    stop_words = set(stopwords.words('english')) 
+    stop_words = set(stopWords.words('english')) 
     vectorizer1 = TfidfVectorizer()
     vectorizer2 = TfidfVectorizer()
     # rows=len(df.index)
@@ -102,10 +115,10 @@ def predictProductivity(processName):
     5: 'Photography', 6: 'Law and Government', 7: 'Health and Fitness', 8: 'Games', 9: 'E-Commerce', 10: 'Forums', 11: 'Food', 12: 'Education', 13: 'Computers and Technology', 14: 'Business/Corporate', 15: 'Adult'}
     productive_list=['Education','Computers and Technology','Business/Corporate']
 
-    lst=processName
+    lst=str(processName)
     lst = ast.literal_eval(lst)
     question = filter_str(str(lst[-1]))
-    question=lst
+
     
     if(question=="Google Chrome"):
         
@@ -116,7 +129,7 @@ def predictProductivity(processName):
         genre=get_genre(question, scrapTool, fitted_vectorizer, model, id_to_category )
 
     category=get_category(genre,productive_list)
-
+    print(category)
     convDict = {"productive":1, "unproductive":0}
     return convDict[category]
 
@@ -197,7 +210,8 @@ def filter_str(text):
   global stop_words
   word_tokens = word_tokenize(text) 
   """making tokens """
-  filtered_sentence = [w for w in word_tokens if not w in stop_words]
+  stoplist = set(stopWords.words("english"))
+  filtered_sentence = [w for w in word_tokens if not w in stoplist]
   filtered_sentence=[i.split('\\')[-1] for i in filtered_sentence ]
   return " ".join(filtered_sentence)
 
