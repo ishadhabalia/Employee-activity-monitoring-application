@@ -1,46 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>EmployeeUi</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/css/quill.snow.css" rel="stylesheet">
-  <link href="assets/css/quill.bubble.css" rel="stylesheet">
-  <link href="assets/css/remixicon.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style_main.css" rel="stylesheet">
-
-</head>
-<body>
-  <app-root></app-root>
-  
-
-  <main id="main" class="main">
+<main id="main" class="main">
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
@@ -191,13 +149,13 @@
                     document.addEventListener("DOMContentLoaded", () => {
                       new ApexCharts(document.querySelector("#reportsChart"), {
                         series: [{
-                          name: 'Productive',
-                          data: [31, 40, 28, 51, 42, 43, 56],
+                          name: 'Sales',
+                          data: [31, 40, 28, 51, 42, 82, 56],
                         }, {
-                          name: 'Unproductive',
+                          name: 'Revenue',
                           data: [11, 32, 45, 32, 34, 52, 41]
                         }, {
-                          name: 'Break',
+                          name: 'Customers',
                           data: [15, 11, 32, 18, 9, 24, 11]
                         }],
                         chart: {
@@ -229,7 +187,7 @@
                         },
                         xaxis: {
                           type: 'datetime',
-                          categories: ["2022-03-24T00:00:00.000Z", "2022-03-24T01:30:00.000Z", "2022-03-24T02:30:00.000Z", "2022-03-24T03:30:00.000Z", "2022-03-24T04:30:00.000Z", "2022-03-24T05:30:00.000Z", "2022-03-24T06:30:00.000Z"]
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
                         },
                         tooltip: {
                           x: {
@@ -262,7 +220,7 @@
                           labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
                           datasets: [{
                             label: 'Line Chart',
-                            data: [10, 9, 10, 9, 11, 3, 4],
+                            data: [65, 59, 80, 81, 56, 55, 40],
                             fill: false,
                             borderColor: 'rgb(75, 192, 192)',
                             tension: 0.1
@@ -297,13 +255,13 @@
                         type: 'pie',
                         data: {
                           labels: [
-                            'Productive',
-                            'Unproductive',
-                            'Break'
+                            'Red',
+                            'Blue',
+                            'Yellow'
                           ],
                           datasets: [{
                             label: 'My First Dataset',
-                            data: [5, 2, 1],
+                            data: [300, 50, 100],
                             backgroundColor: [
                               'rgb(255, 99, 132)',
                               'rgb(54, 162, 235)',
@@ -327,36 +285,8 @@
         </div><!-- End Left side columns -->
 
 
+
       </div>
     </section>
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Abcde</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-
-  <script src="assets/js/apexcharts.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/chart.min.js"></script>
-  <script src="assets/js/echarts.min.js"></script>
-  <script src="assets/js/quill.min.js"></script>
-  <script src="assets/js/simple-datatables.js"></script>
-  <script src="assets/js/tinymce.min.js"></script>
-  <script src="assets/js/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-</html>
