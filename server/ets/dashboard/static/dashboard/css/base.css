@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Nunito", sans-serif;
 }
 
+
 /*header*/
 .header {
     transition: all 0.5s;
@@ -37,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Search Bar */
   }
  
+  
  
   .header .search-bar {
     min-width: 360px;
@@ -250,6 +252,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.header .toggle-sidebar-btn {
+  font-size: 32px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: #012970;
+}
+
 .sidebar-nav {
   padding: 0;
   margin: 0;
@@ -286,11 +295,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 10px;
   color: #4154f1;
 }
-.sidebar-nav .nav-link.collapsed {
+.sidebar-nav .nav-link.options {
   color: #012970;
   background: #fff;
 }
-.sidebar-nav .nav-link.collapsed i {
+.sidebar-nav .nav-link.options i {
   color: #899bbd;
 }
 .sidebar-nav .nav-link:hover {
@@ -334,6 +343,7 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-nav .nav-content a.active i {
   background-color: #4154f1;
 }
+
 
 
 /* Card */
