@@ -16,6 +16,8 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'css/styles-profile.css' %}">
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
@@ -33,7 +35,37 @@
     </nav>
 </div><!-- End Page Title -->
 
+
+<section class="section profile" id="profile-section">
+    <div class="row">
+
+        <!-- overview card -->
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+                    <img src="{% static 'img/profile-img.jpg' %}" alt="Profile" class="rounded-circle">
+                    <h2 class="text-center">Kevin Anderson</h2>
+                    <h3 class="text-center">Web Designer</h3>
+                    <div class="social-links mt-2">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of overview card -->
+
+
+    </div>
+</section>
+
+
 {% endblock content %}
+
+
 
 {% block scripts %}
 <script src="{% static 'js/profile.js' %}"></script>

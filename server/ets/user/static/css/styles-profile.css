@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pagetitle {
     margin-bottom: 10px;
-    position: relative;
+    padding-top: 20px;
 }
 
 .pagetitle h1 {
@@ -48,4 +48,14 @@ h1, h2, h3, h4, h5, h6 {
 
 :hover .breadcrumb a{
     color: #4154f1;
+}
+
+.profile-card h2{
+    font-weight: 700;
+    font-size: 5vh;
+    padding-top: 2vh ;
+}
+
+.profile-card{
+    padding: 25%;
 }
