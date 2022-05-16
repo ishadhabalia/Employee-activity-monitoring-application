@@ -2,6 +2,53 @@
 
 {% endblock %} {% block content %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/teams.css' %}">
+
+<main id="main" class="main">
+
+    <section>
+        <div class="container-fluid">
+            
+            <div class="col-12">
+                <div class="row g-0 recommendations">
+                    
+                   
+                    {% for t in teams %}
+                   
+                    
+                    <div class="card teams-card col-xl-4">
+                        <a href="{% url 'TeamDetails' t.team_name %}" class=" team-button mt-auto btn btn-light stretched-link">
+                        <div class="card-body pt-4">
+                           
+                            <h3 class="card-title teams-title">{{t.team_name}} <span>|{{t.department}} </span></h3>
+          
+                            <div class="d-flex align-items-center">
+                              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-people"></i>
+                              </div>
+                              <div class="ps-3">
+                                <h6>{{t.number}} Members</h6>
+          
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                
+                    {% endfor %}
+            
+                </div>
+             
+            </div>
+
+           
+        </div>
+    
+       
+    </section>
+        
+</main><!-- End #main -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
