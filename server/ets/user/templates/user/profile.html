@@ -1,14 +1,16 @@
-{% extends "dashboard/base.html" %} {% load static %} 
+{% extends "dashboard/base.html" %} {% load static %}
 
 
 {% block styles %}
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
 
 <link rel="stylesheet" href="{% static 'css/styles-profile.css' %}">
-{% endblock styles %} 
+{% endblock styles %}
 
 {% block title %}
 <title>Profile</title>
@@ -16,14 +18,24 @@
 
 {% block content %}
 
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
 <link rel="stylesheet" href="{% static 'css/styles-profile.css' %}">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
+
+<!-- Empty div to make space equal to fixed header -->
 <div id="empty"></div>
 
+
+<!-- Page Title -->
 <div class="pagetitle" id="pagetitle">
     <h1>Profile</h1>
     <nav>
@@ -33,7 +45,9 @@
             <li class="breadcrumb-item active">Profile</li>
         </ol>
     </nav>
-</div><!-- End Page Title -->
+</div>
+<!-- End Page Title -->
+
 
 
 <section class="section profile" id="profile-section">
@@ -57,6 +71,132 @@
             </div>
         </div>
         <!-- end of overview card -->
+
+
+        <!-- Details -->
+        <div class="col-xl-8">
+
+            <div class="card">
+                <div class="card-body pt-3">
+
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab"
+                                data-bs-target="#profile-overview">Personal Details</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#team-overview">Team
+                                Details</button>
+                        </li>
+                    </ul>
+
+
+                    <div class="tab-content pt-2">
+
+                        <!-- Personal Details tab -->
+                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                                <div class="col-lg-9 col-md-8">{{user.name}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Role</div>
+                                <div class="col-lg-9 col-md-8">{{user.role}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Joined on</div>
+                                <div class="col-lg-9 col-md-8">{{user.joined_on}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Office Branch</div>
+                                <div class="col-lg-9 col-md-8">{{user.office_branch}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">DOB</div>
+                                <div class="col-lg-9 col-md-8">{{user.dob}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Address</div>
+                                <div class="col-lg-9 col-md-8">{{user.address}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Contact</div>
+                                <div class="col-lg-9 col-md-8">{{user.contact}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Email</div>
+                                <div class="col-lg-9 col-md-8">{{user.email}}</div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Team details tab -->
+                        <div class="tab-pane fade team-overview pt-3" id="team-overview">
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label ">Department</div>
+                                <div class="col-lg-9 col-md-8">{{team.dept}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Team name</div>
+                                <div class="col-lg-9 col-md-8">{{team.team_name}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Members</div>
+                                <div class="col-lg-9 col-md-8">{{team.no_members}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Manager</div>
+                                <div class="col-lg-9 col-md-8">{{team.manager}}</div>
+                            </div>
+
+
+                            <!-- Team Members -->
+                            <h5 class="card-title" id="team-members-title">Team Members</h5>
+
+                            <table class="table table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Role</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for item in team.team_members %}
+                                    <tr>
+                                        <td>{{item.m_name}}</td>
+                                        <td>{{item.m_role}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div><!-- End Bordered Tabs -->
+
+                </div>
+            </div>
+
+        </div>
 
 
     </div>
