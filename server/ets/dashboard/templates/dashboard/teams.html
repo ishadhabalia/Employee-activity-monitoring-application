@@ -16,14 +16,14 @@
                     {% for t in teams %}
                    
                     
-                    <div class="card teams-card col-xl-4">
+                    <div class="card teams-card col-xl-4 mx-auto">
                         <a href="{% url 'TeamDetails' t.team_name %}" class=" team-button mt-auto btn btn-light stretched-link">
                         <div class="card-body pt-4">
                            
                             <h3 class="card-title teams-title">{{t.team_name}} <span>|{{t.department}} </span></h3>
           
                             <div class="d-flex align-items-center">
-                              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" >
                                 <i class="bi bi-people"></i>
                               </div>
                               <div class="ps-3">
