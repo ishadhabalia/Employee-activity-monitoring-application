@@ -6,4 +6,4 @@ def login(request):
     return render(request,'user/login.html',{'nbar': 'login','role':'manager'})
 
 def dispProfile(request):
-    return render(request,'user/profile.html',{'nbar': 'home','profile':'manager'})
+    return render(request,'user/profile.html',{'nbar': 'home','role':'manager'})
