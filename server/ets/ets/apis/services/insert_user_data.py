@@ -148,7 +148,7 @@ class ScrapTool:
         content = requests.get(website_url,timeout=60).content
         
         #lxml is apparently faster than other settings.
-        soup = BeautifulSoup(content, "lxml")
+        soup = BeautifulSoup(content, "html5lib")
         result = {
             "website_url": website_url,
             "website_name": self.get_website_name(website_url),

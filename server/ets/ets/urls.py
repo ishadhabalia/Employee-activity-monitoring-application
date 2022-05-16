@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from ets.apis.views.user_data_view import GetData
 from ets.apis.views.data_collection_view import CollectData
 
@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('activity',GetData.as_view(), name='get-activity'),
     path('update-activity', CollectData.as_view(), name='update-activity'),
+    path('dashboard/', include('dashboard.urls')),
 ]
