@@ -37,8 +37,12 @@ h1, h2, h3, h4, h5, h6 {
     /* Toggle Sidebar Button */
     /* Search Bar */
   }
- 
-  
+
+  @media (min-width: 1200px) {
+    .toggle-sidebar-btn {
+      display: none;
+    }
+  }
  
   .header .search-bar {
     min-width: 360px;
