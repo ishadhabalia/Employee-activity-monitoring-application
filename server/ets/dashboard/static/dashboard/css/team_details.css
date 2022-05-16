@@ -1,0 +1,34 @@
+#main {
+    margin-top:60px;
+    padding-top: 20px;
+    transition: all 0.3s;
+  }
+
+.table{
+  border: none;
+  text-decoration: none;
+  border-color:#DCDCDC;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+    background-color:white;
+    border: none;
+    color: #4154f1;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+  }
+
+  .category-icon{
+    font-size: 20px;
+  }
+  
+  td {
+    text-align: center;
+  }
