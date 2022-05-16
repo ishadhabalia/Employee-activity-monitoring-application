@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ets',
     'ets.apis.apps',
     'dashboard.apps.DashboardConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [

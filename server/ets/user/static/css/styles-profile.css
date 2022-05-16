@@ -1,0 +1,51 @@
+#profile-icon{
+    display: none;
+}
+.sidebar-nav .menu-profile .nav-link{
+    color: #4154f1;
+    background: #f6f9ff;
+}
+
+.sidebar-nav .menu-dashboard .nav-link{
+    color: #012970;
+    background: #fff ; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.pagetitle {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.pagetitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+
+.breadcrumb a {
+    color: #899bbd;
+    transition: 0.3s;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #899bbd;
+    font-weight: 600;
+}
+
+:hover .breadcrumb a{
+    color: #4154f1;
+}
