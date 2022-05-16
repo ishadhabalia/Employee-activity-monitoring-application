@@ -23,4 +23,5 @@ urlpatterns = [
     path('activity',GetData.as_view(), name='get-activity'),
     path('update-activity', CollectData.as_view(), name='update-activity'),
     path('dashboard/', include('dashboard.urls')),
+    path('', include('user.urls')),
 ]
