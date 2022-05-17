@@ -137,11 +137,17 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link {% if nbar != 'break' %}options{% endif %}" href="#">
-          <i class="bi bi-stopwatch"></i>
-          <span>Break</span>
-        </a>
+      <li class="nav-item" id="menu-break">
+        <div class="nav-link {% if break %}options{% endif %}" >
+          <i class="bi bi-stopwatch "></i>
+          <span>
+            {% if break %}
+            Break
+            {% else %}
+            Resume
+            {% endif %}
+          </span>
+        </div>
       </li>
       <!-- End Break/Holiday Page Nav -->
 

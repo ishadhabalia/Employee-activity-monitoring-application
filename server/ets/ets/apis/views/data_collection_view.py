@@ -24,4 +24,19 @@ class CollectData(APIView):
             return Response({"status":"activity not updated"})
         except:
             raise Exception('user activity not saved')
+
+# For stopping data collection when break is selected
+class ToggleBreak(APIView):
+    parser_classes = (JSONParser,)
+    renderer_classes = (renderers.JSONRenderer,)
+
+    def post(self, request):
+        strData = request.data
+        print(strData)
+        try:
+            # if 0, stop tracking
+            #if 1, resume tracking
+            return Response({"status":"toggle successful"})
+        except:
+            return Response({"status":"toggle unsuccessful"})
             

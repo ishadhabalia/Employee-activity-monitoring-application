@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ets.apis.apps',
     'dashboard.apps.DashboardConfig',
     'user.apps.UserConfig',
+    # 'dashboard.context_processor.base_view',
 ]
 
 MIDDLEWARE = [
