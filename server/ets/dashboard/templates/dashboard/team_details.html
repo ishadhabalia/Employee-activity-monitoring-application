@@ -88,7 +88,24 @@
                 <th>Category</th>
                 <th>Productive/Unproductive</th>
               </tr>
-                
+        {% for item in categories %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{item.1}}</td>
+            <td>
+                {% if item.2 %}
+                <button class="button">
+                    <i class="bi bi-toggle-on category-icon change-category">&nbsp;&nbsp;&nbsp;Productive</i>
+                </button>
+                {% else %}
+                <button class="button {{item.0}} ">
+                    <i class="bi bi-toggle-off category-icon change-category">&nbsp;&nbsp;&nbsp;Unproductive</i>
+                </button>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
         <tr>
             <td>1</td>
             <td>Travel</td>
@@ -199,3 +216,8 @@
     crossorigin="anonymous"></script>
 
 {% endblock content %}
+
+
+{% block scripts%}
+    <script src="{% static 'dashboard/js/team_details.js' %}"></script>
+{% endblock scripts%}

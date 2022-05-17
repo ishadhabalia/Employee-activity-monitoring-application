@@ -1,3 +1,4 @@
+from math import prod
 from django.shortcuts import render
 
 # Create your views here.
@@ -62,10 +63,34 @@ def view_team_details(request,teamname):
           if(teams[i]["team_name"]==teamname):
                team_details=teams[i]
      print(team_details)
+     
+
+     # Prod and unprod Categories for the team, 1=prod
+     categories = [
+          ['travel','Travel',0],
+          ['social_networking','Social Networking and Messaging',0],
+          ['news','News',1],
+          ['streaming','Streaming Services',1],
+          ['sports','Sports',1],
+          ['photography','Photography',1],
+          ['law_govt','Law and Government',1],
+          ['health_fitness','Health and Fitness',1],
+          ['games','Games',0],
+          ['e_comm','E-Commerce',1],
+          ['forums','Forums',1],
+          ['food','Food',0],
+          ['education','Education',1],
+          ['comps_tech','Computers and Technology',1],
+          ['business_corp','Business/Corporate',1],
+          ['adult','Adult',0],
+     ]
+
      context = {
-        'nbar': 'teams',
-        'role':'manager',
-        "member_details" : member_details,
-        "team_details":team_details
+          'nbar': 'teams',
+          'role':'manager',
+          "member_details" : member_details,
+          "team_details":team_details,
+          'categories':categories,
     }
+
      return render(request,'dashboard/team_details.html',context)

@@ -27,8 +27,12 @@
   }
 
   .category-icon{
-    font-size: 20px;
+      font-size: 20px;
+      color: #00308F;
+      text-align: center;
+      font-size: 16px;
   }
+
   
   td {
     text-align: center;
