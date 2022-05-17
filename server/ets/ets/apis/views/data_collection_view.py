@@ -39,4 +39,18 @@ class ToggleBreak(APIView):
             return Response({"status":"toggle successful"})
         except:
             return Response({"status":"toggle unsuccessful"})
+
+class ToggleProdCategory(APIView):
+    parser_classes = (JSONParser,)
+    renderer_classes = (renderers.JSONRenderer,)
+
+    def post(self, request):
+        strData = request.data
+        print(strData)
+        try:
+            # if 0, set to unproductive
+            #if 1, set to productive
+            return Response({"status":"toggle successful"})
+        except:
+            return Response({"status":"toggle unsuccessful"})
             

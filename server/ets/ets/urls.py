@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from ets.apis.views.user_data_view import GetData
-from ets.apis.views.data_collection_view import CollectData, ToggleBreak
+from ets.apis.views.data_collection_view import CollectData, ToggleBreak, ToggleProdCategory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('activity',GetData.as_view(), name='get-activity'),
     path('update-activity', CollectData.as_view(), name='update-activity'),
     path('toggle-break', ToggleBreak.as_view(), name="toggle-break"),
+    path('toggle-prod-category', ToggleProdCategory.as_view(), name="toggle-prod-category"),
     path('', include('dashboard.urls')),
     path('', include('user.urls')),
 ]
