@@ -5,17 +5,18 @@
   }
 
 .table{
-  border: none;
-  text-decoration: none;
-  border-color:#DCDCDC;
+
   width:80%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+  
 }
+
 .button {
-    background-color:white;
+    background-color: white;
     border: none;
-    color: #4154f1;
+    color: #00308F;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -31,4 +32,66 @@
   
   td {
     text-align: center;
+    
   }
+
+
+  .team-button{
+ background-color:white;
+ border:none;
+ 
+  }
+
+ .team-details-card  h6 {
+    font-size: 20px;
+    color: #012970;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+ .team-details-card .card-icon {
+    color: #4154f1;
+    background: #f6f6fe;
+    font-size: 32px;
+    line-height: 0;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .teams-title{
+      font-size: 28px;
+  }
+
+  .teams-title span {
+    color: #899bbd;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #6495ED;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #6495ED;
+}
