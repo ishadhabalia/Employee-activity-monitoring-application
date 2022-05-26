@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ets',
     'ets.apis.apps',
-    'dashboard.apps.DashboardConfig',
+    'dashboard',
     'user.apps.UserConfig',
     # 'dashboard.context_processor.base_view',
 ]

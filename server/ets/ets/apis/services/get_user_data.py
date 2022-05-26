@@ -1,4 +1,4 @@
-from ets.apis.models import UserBufferData, UserBufferLocation, UserBuffer
+from dashboard.models import UserBufferData, UserBufferLocation, UserBuffer
 from rest_framework.exceptions import NotFound
 from ets.apis.serializers.user_buffer_serializer import UserBufferSerializer, UserBufferLocationSerializer, UserBufferDataSerializer
 

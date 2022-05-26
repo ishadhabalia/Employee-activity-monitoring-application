@@ -17,4 +17,4 @@ class GetData(APIView):
         logger.info('request is  {}'.format(user_id))
         user_activity_data = get_complete_user_data(user_id)
         return Response(user_activity_data)
-        
+                                                                                    

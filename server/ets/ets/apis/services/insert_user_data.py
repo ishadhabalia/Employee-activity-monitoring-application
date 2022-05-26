@@ -1,4 +1,4 @@
-from ets.apis.models import UserBuffer, UserBufferData, UserBufferLocation
+from dashboard.models import UserBuffer, UserBufferData, UserBufferLocation
 import ets.apis.constants as Constants
 
 import pickle

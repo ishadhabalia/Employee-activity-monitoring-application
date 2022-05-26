@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ets.apis.models import UserBuffer, UserBufferLocation, UserBufferData
+from dashboard.models import UserBuffer, UserBufferLocation, UserBufferData
 
 class UserBufferSerializer(serializers.ModelSerializer):
     class Meta:

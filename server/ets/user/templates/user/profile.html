@@ -40,7 +40,7 @@
     <h1>Profile</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'ViewDashBoard' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'ViewDashBoard' user_id %}">Home</a></li>
             <li class="breadcrumb-item">Users</li>
             <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -59,8 +59,8 @@
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                     <img src="{% static 'img/profile-img.jpg' %}" alt="Profile" class="rounded-circle">
-                    <h2 class="text-center">Kevin Anderson</h2>
-                    <h3 class="text-center">Web Designer</h3>
+                    <h2 class="text-center">{{user.name}}</h2>
+                    <h3 class="text-center">{{user.role}}</h3>
                     <div class="social-links mt-2">
                         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -85,10 +85,12 @@
                             <button class="nav-link active" data-bs-toggle="tab"
                                 data-bs-target="#profile-overview">Personal Details</button>
                         </li>
+                        {% if role != 'manager'%}
                         <li class="nav-item">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#team-overview">Team
                                 Details</button>
                         </li>
+                        {% endif %}
                     </ul>
 
 
@@ -120,11 +122,11 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 label">DOB</div>
-                                <div class="col-lg-9 col-md-8">{{user.dob}}</div>
+                                <div class="col-lg-3 col-md-4 label">City</div>
+                                <div class="col-lg-9 col-md-8">{{user.city}}</div>
                             </div>
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Address</div>
                                 <div class="col-lg-9 col-md-8">{{user.address}}</div>
                             </div>
@@ -132,7 +134,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Contact</div>
                                 <div class="col-lg-9 col-md-8">{{user.contact}}</div>
-                            </div>
+                            </div> -->
 
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Email</div>
@@ -141,7 +143,7 @@
 
                         </div>
 
-
+                        {% if role != 'manager' %}
                         <!-- Team details tab -->
                         <div class="tab-pane fade team-overview pt-3" id="team-overview">
 
@@ -190,6 +192,7 @@
                             </table>
 
                         </div>
+                        {% endif %}
 
                     </div><!-- End Bordered Tabs -->
 

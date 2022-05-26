@@ -1,35 +1,42 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from dashboard.services.get_user_data import get_user_buffer, get_user_location
 # Create your views here.
 
+def redirect_login(request):
+    return redirect('Login')
 def login(request):
-    return render(request,'user/login.html',{'nbar': 'login','role':'manager'})
+    if request.method == 'POST':
+        if request.POST.get('password') == 'manager':
+            return redirect(reverse('ViewDashBoard', args = (1,)))
+        return redirect(reverse('ViewDashBoard', args = (2,)))
+    return render(request,'user/login.html',{'nbar': 'login','role':'employee'})
 
-def dispProfile(request):
+def dispProfile(request,user_id):
+    user_data = get_user_buffer(user_id)
+    user_location = get_user_location(user_id)
     user = {
-        'name': 'name-abc',
-        'role': 'Role-abc',
-        'joined_on': 'joining-abc',
+        'name': user_data.name,
+        'role': user_data.role,
+        'joined_on': user_data.joined_on,
         'office_branch': 'branch-abc',
-        'dob': 'DOB-abc',
-        'address': 'address-abc',
-        'contact': 'contact-abc',
-        'email': 'email-abc',
+        'city': user_location,
+        'email': user_data.name+'@gmail.com',
     }
     team = {
-        'dept': 'dept-abc',
-        'team_name': 'team-name',
-        'no_members': 'no-abc',
-        'manager': 'manager-abc',
+        'dept': 'Software Engineering',
+        'team_name': 'abcd',
+        'no_members': 2,
+        'manager': 'manan',
         'team_members': [
-            {'m_name':'m1_name', 'm_role':'m1_role'},
-            {'m_name':'m3_name', 'm_role':'m2_role'},
-            {'m_name':'m3_name', 'm_role':'m3_role'},
+            {'m_name':'saket', 'm_role':'employee'},
+            {'m_name':'isha', 'm_role':'employee'},
         ],
     }
     context = {
         'user': user,
         'team': team,
-        'nbar': 'home','role':'manager'
+        'nbar': 'home','role':user_data.role,
+        'user_id':user_id
     }
     return render(request,'user/profile.html', context)

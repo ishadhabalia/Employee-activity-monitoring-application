@@ -13,7 +13,7 @@
                 <div class="row g-0 recommendations">
                     
                     <div class="card team-details-card col-xl-4 mx-auto">
-                        <a href="{% url 'TeamDetails' team_details.team_name %}" class=" team-button mt-auto btn btn-light stretched-link">
+                        <a href="{% url 'TeamDetails' user_id team_details.team_name %}" class=" team-button mt-auto btn btn-light stretched-link">
                         <div class="card-body pt-4">
                            
                             <h3 class="card-title teams-title">{{team_details.team_name}} <span>|{{team_details.department}} </span></h3>
@@ -58,7 +58,7 @@
               </tr>
        
        {% for t in  member_details %}
-       <tr class="clickable text-center" onclick="window.location='{% url 'TeamDetails' t.team_name %}'">
+       <tr class="clickable text-center" onclick="window.location=''">
            <td> {{ t.member_name }} </td>
            <td> {{ t.prod_per }} </td>
            <td> {{ t.unprod_per }} </td>
